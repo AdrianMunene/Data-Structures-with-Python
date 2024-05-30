@@ -1,8 +1,8 @@
-import heapq, random
-import weighted_graph
+import heapq
 
 def dijkstra(graph, start, end):
     visited = set()
+    #priority_queue = list of tuples
     priority_queue = [(0, start, [start])]  # (distance, node, path)
 
     while priority_queue:
@@ -41,8 +41,7 @@ graph = {
 }
 
  
-print(dijkstra(graph, 'Fagaras', 'Zerind'))
-
+print(dijkstra(graph, 'Arad', 'Craiova'))
 
 
 

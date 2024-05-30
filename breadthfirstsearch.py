@@ -19,6 +19,7 @@ def breadthfirstsearch(root):
     queue = deque([root])
 
     while queue:
+        #popleft is dequeue, cause queue operates on FIFO and we want element at index 0
         current = queue.popleft()
 
         tree[current.val] = []
@@ -26,16 +27,11 @@ def breadthfirstsearch(root):
         if current.left != None:
             queue.append(current.left)
             tree[current.val].append(current.left.val)
-        # else: 
-        #     tree[current.val].append(None)
 
         if current.right != None:
             queue.append(current.right) 
             tree[current.val].append(current.right.val)
-        # else:
-        #     tree[current.val].append(None)
-
-
+#delete entries in tree {} with no child nodes
     for i in list(tree.keys()):
         if tree[i] == []:
             del tree[i]
@@ -73,7 +69,7 @@ a2.right = a4
 a5.left = a7
 a6.right = a8
 
-print(breadthfirstsearch(root))
+breadthfirstsearch(root)
 
 # def breadthfirstsearch(graph, root):
 #     distances = {}

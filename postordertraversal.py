@@ -88,4 +88,4 @@ a2.right = a4
 a5.left = a7
 a6.right = a8
 
-postorderTraversal(root)
+# postorderTraversal(root)
